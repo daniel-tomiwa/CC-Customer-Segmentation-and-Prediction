@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Customer Credit Card Risk Prediction</title>
+		<style type="text/css">
+		body {
+		  color: black;
+		}
+
+		h2 {
+		  color: black;
+		}
+		p{
+			color:black;
+			text-align: justify;
+		}
+		.results{
+			color:blue;
+		}
+		.introdiv {
+			margin: auto;
+			height: 160px;
+			width: 60%;
+			background-color: lightblue;
+			text-align: left;
+			padding: 8px;
+		}
+
+		.formdiv {
+			margin: auto;
+			height: 420px;
+			width: 60%;
+			background-color: gray;
+			padding: 8px;
+
+		}
+
+		.center {
+		  margin: auto;
+		  width: 60%;
+		  height: 85%;
+		  border: 1px dashed blue;
+		  padding: 15px;
+		  background-color: lavender;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<div class="introdiv">
+				<h2>Customer Segmentation</h2>
+				<p>This is an application that identifies category a credit card customer belongs to based on six(6) attributes.
+				The use will enter a set of values. The system displays a category for the customer whether low risk or high risk.
+			</p>
+
+			</div>
+	
+			<div class="formdiv">
+				<h2>Provide values</h2>
+				<form method="post" action="/predict" enctype="multipart/form-data">
+					<p>  <label for="">PURCHASES:          Amount in Dollars</label>
+						<input type="text" name="PURCHASES"  required>
+					</p>
+					<p>  <label for="">CASH ADVANCE:        Amount in Dollars</label>
+            			<input type="text" name="CASH_ADVANCE"  required>
+            		</p>
+					<p>  <label for="">PURCHASES_FREQUENCY:        	    0 - 1</label>
+						<input type="text" name="PURCHASES_FREQUENCY"  required>
+					</p>
+					<p>  <label for="">CASH_ADVANCE_FREQUENCY:         0 - 1</label>
+            			<input type="text" name="CASH_ADVANCE_FREQUENCY"  required>
+            		</p>
+					<p>  <label for="">CASH_ADVANCE_TRANSACTIONS:   Number of transactions</label>
+						<input type="text" name="CASH_ADVANCE_TRX"  required>
+					</p>
+					<p>  <label for="">PURCHASES_TRANSACTIONS:     Number of transactions</label>
+						<input type="text" name="PURCHASES_TRX"  required>
+					</p>
+					<p>
+					<input type="submit" value="Submit">
+					</p>
+				</form>
+			</div>
+
+		</div>
+	</body>
+</html>

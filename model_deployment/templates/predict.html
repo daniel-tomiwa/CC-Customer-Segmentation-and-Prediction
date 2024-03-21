@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Application for Credit Card Customer Segment Recognition</title>
+		<style type="text/css">
+		body {
+		  color: black;
+		}
+
+		h2 {
+		  color: black;
+		}
+		p{
+			color:black;
+			text-align: justify;
+		}
+		.results{
+			color:blue;
+		}
+		.introdiv {
+			margin: auto;
+			height: 160px;
+			width: 60%;
+			background-color: lightblue;
+			text-align: left;
+			padding: 8px;
+		}
+
+		.resultdiv {
+			margin: auto;
+			height: 160px;
+			width: 60%;
+			background-color: ivory;
+			text-align: left;
+			padding: 8px;
+		}
+		.center {
+		  margin: auto;
+		  width: 60%;
+		  height: 85%;
+		  border: 1px dashed blue;
+		  padding: 15px;
+		  background-color: lavender;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<div class="introdiv">
+				<h2>Customer Segment Recognition</h2>
+				<p>This is an application that identifies the category of a credit card customer in terms of risk using 6 attributes.
+				The user will enter a set of values. The system displays the category of the customer whether Low risk or High risk.
+			</p>
+
+			</div>
+	
+
+			<div class="resultdiv">
+				<!--https://flask.palletsprojects.com/en/2.3.x/patterns/flashing/-->
+				<h2>Display Prediction Results</h2>
+                <p class="results">Category of customer(directly from variable): <span style="color:{{color_signal}};"> {{prediction}}</span><p></p>
+
+				{% with messages = get_flashed_messages() %}
+					  {% if messages %}
+						<p class="results">Category of Customer(By retrieving from flashed messages): <span style="color:{{ messages[1] }};">{{ messages[0] }}</span><p>
+	
+					  {% endif %}
+					{% endwith %}
+
+			</div>
+		</div>
+	</body>
+</html>
